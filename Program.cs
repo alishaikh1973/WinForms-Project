@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FILE_IO
+namespace SerializationDemo
 {
     internal static class Program
     {
@@ -16,7 +16,7 @@ namespace FILE_IO
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Product_IO_Demo());
+            Application.Run(new Form1());
         }
     }
 }
