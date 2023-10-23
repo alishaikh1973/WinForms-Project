@@ -11,22 +11,32 @@ using System.Windows.Forms;
 
 namespace FILE_IO
 {
-    public partial class Form1 : Form
+    public partial class Product_IO_Demo : Form
     {
-        public Form1()
+        public Product_IO_Demo()
         {
             InitializeComponent();
         }
 
-        private void textBox4_TextChanged(object sender, EventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Product_IO_Demo_Load(object sender, EventArgs e)
         {
 
         }
 
         private void btnCreateDirectory_Click(object sender, EventArgs e)
         {
-            //try
-            /*{
+            /*try
+            {
                 string path = @"D:\TestFolder";
 
                 if (Directory.Exists(path))
@@ -43,7 +53,6 @@ namespace FILE_IO
             {
                 MessageBox.Show(ex.Message);
             }*/
-
             try
             {
                 string path = @"D:\TestFolder2";
@@ -66,7 +75,7 @@ namespace FILE_IO
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnCreateFile_Click(object sender, EventArgs e)
         {
             /*try
             {
@@ -84,8 +93,7 @@ namespace FILE_IO
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }
-*/
+            }*/
             try
             {
                 string path = @"D:\TestFolder\Employee2.dat"; // .dat -->data file(binary)
@@ -105,6 +113,7 @@ namespace FILE_IO
                 MessageBox.Show(ex.Message);
             }
 
+
         }
 
         private void btnwrite_Click(object sender, EventArgs e)
@@ -115,7 +124,7 @@ namespace FILE_IO
                 BinaryWriter bw = new BinaryWriter(fs);
                 bw.Write(Convert.ToInt32(txtId.Text));
                 bw.Write(txtName.Text);
-                bw.Write(Convert.ToDouble(txtsal.Text));
+                bw.Write(Convert.ToDouble(txtPrice.Text));
                 bw.Close();
                 fs.Close();
                 MessageBox.Show("Done");
@@ -135,7 +144,7 @@ namespace FILE_IO
                 BinaryReader br = new BinaryReader(fs);
                 txtId.Text = br.ReadInt32().ToString();
                 txtName.Text = br.ReadString();
-                txtsal.Text = br.ReadDouble().ToString();
+                txtPrice.Text = br.ReadDouble().ToString();
                 br.Close();
                 fs.Close();
             }
@@ -180,11 +189,6 @@ namespace FILE_IO
             {
                 MessageBox.Show(ex.Message);
             }
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
 
         }
     }
